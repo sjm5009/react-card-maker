@@ -66,11 +66,11 @@ const Maker = ({ authProvider }) => {
   };
 
   useEffect(() => {
-    /* authProvider.onAuthChanged((user) => {
+    authProvider.onAuthChanged((user) => {
       if (!user) {
         navigation("/");
       }
-    }); */
+    });
   });
 
   return (
