@@ -17,10 +17,10 @@ Firebase를 사용해 로그인, 이미지업로드, DB저장 학습예정
 
 ## 학습내용
 
-### `React Hook 기본 문법 사용 복습`
+### `1. React Hook 기본 문법 사용 복습`
 
-### `React Router로 페이지 이동 설정해 보기`
+### `2. React Router로 페이지 이동 설정해 보기`
 
-### `Firebase의 제공 기능 사용해보기`
+### `3. Firebase의 제공 기능 사용해보기`
 
-### `CSS 연습과 PostCSS 기능 사용해보기`
+### `4. CSS 연습과 PostCSS 기능 사용해보기`
