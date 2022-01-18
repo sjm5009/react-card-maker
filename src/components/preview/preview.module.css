@@ -1,0 +1,21 @@
+@value mediaQuery from '../../common/size.css';
+
+.preview {
+  flex-basis: 50%;
+  /* background-color: yellowgreen; */
+  border-left: 1px solid rgb(245, 187, 120);
+}
+
+.title {
+  text-align: center;
+}
+
+.cards {
+  list-style: none;
+}
+
+@media screen and (max-width: mediaQuery) {
+  .preview {
+    border-top: 1px solid rgb(245, 187, 120);
+  }
+}

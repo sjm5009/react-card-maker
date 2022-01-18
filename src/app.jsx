@@ -1,8 +1,24 @@
-import './app.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import styles from "./app.module.css";
+import Login from "./components/login/login";
+import Maker from "./components/maker/maker";
 
-function App() {
+function App({ authProvider }) {
   return (
-    <h1>Hello :)!!</h1>
+    <div className={styles.container}>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={<Login authProvider={authProvider} />}
+          ></Route>
+          <Route
+            path="/maker"
+            element={<Maker authProvider={authProvider} />}
+          ></Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

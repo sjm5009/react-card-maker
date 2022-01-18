@@ -1,0 +1,79 @@
+@value makerBlack, makerWhite, makerColorful from '../../common/color.css';
+
+.card {
+  /* background-color: darksalmon; */
+  width: 95%;
+  margin-bottom: 1em;
+  display: flex;
+  border-radius: 3em;
+}
+
+.card.dark {
+  background-color: makerBlack;
+  color: makerWhite;
+}
+
+.card.light {
+  background-color: makerWhite;
+}
+
+.card.colorful {
+  /* background: makerColorful; */
+  background: linear-gradient(
+    166deg,
+    rgba(237, 193, 211, 1) 0%,
+    rgba(212, 149, 161, 1) 60%,
+    rgba(162, 63, 63, 1) 100%,
+    rgba(127, 188, 242, 1) 100%
+  );
+}
+
+.img {
+  width: 10em;
+  height: 10em;
+  margin: 1em 2em;
+}
+
+.cardInfo {
+  margin-bottom: 1em;
+  width: 95%;
+}
+
+.company {
+  margin: 0 0 1em 0;
+}
+
+.company.dark::after {
+  content: "";
+  display: block;
+  width: 95%;
+  border-bottom: 1px solid makerWhite;
+  padding-bottom: 0.5em;
+}
+
+.company.light::after {
+  content: "";
+  display: block;
+  width: 95%;
+  border-bottom: 1px solid makerBlack;
+  padding-bottom: 0.5em;
+}
+
+.company.colorful::after {
+  content: "";
+  display: block;
+  width: 95%;
+  border-bottom: 1px solid rgba(162, 63, 63, 1);
+  padding-bottom: 0.5em;
+}
+
+.title,
+.email,
+.description {
+  margin: 0 0 0.5em 0;
+}
+
+.name {
+  margin-top: 1em;
+  margin-bottom: 0.3em;
+}

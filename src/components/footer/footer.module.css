@@ -1,0 +1,13 @@
+@value loginDivWidth from '../../common/size.css';
+
+.container {
+  width: 100%;
+  background-color: darksalmon;
+  text-align: center;
+  color: chocolate;
+  padding: 0.5em 0;
+}
+
+.text {
+  margin: 0;
+}
