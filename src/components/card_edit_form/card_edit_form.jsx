@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import Button from "../button/button";
-import ImageFileButton from "../button/imageFileButton";
+import IamgeFileInput from "../image_file_input/iamge_file_input";
 import styles from "./card_edit_form.module.css";
 
 const CardEditForm = ({ card, updateCard, deleteCard }) => {
@@ -34,7 +34,7 @@ const CardEditForm = ({ card, updateCard, deleteCard }) => {
   };
 
   return (
-    <form>
+    <form className={styles.form}>
       <input
         ref={nameRef}
         type="text"
@@ -85,8 +85,8 @@ const CardEditForm = ({ card, updateCard, deleteCard }) => {
         value={description}
         onChange={onChange}
       ></textarea>
-      <div>
-        <ImageFileButton />
+      <div className={styles.fileInput}>
+        <IamgeFileInput />
       </div>
       <Button name="Delete" onClick={onSubmit}></Button>
     </form>
