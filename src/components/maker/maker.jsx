@@ -6,7 +6,7 @@ import Footer from "../footer/footer";
 import Header from "../header/header";
 import styles from "./maker.module.css";
 
-const Maker = ({ authProvider }) => {
+const Maker = ({ FileInput, authProvider }) => {
   const [cards, setCards] = useState({
     1: {
       id: 1,
@@ -78,6 +78,7 @@ const Maker = ({ authProvider }) => {
       <Header onLogout={logout}></Header>
       <div className={styles.container}>
         <Editor
+          FileInput={FileInput}
           cards={cards}
           addCard={addOrUpdateCard}
           updateCard={addOrUpdateCard}
