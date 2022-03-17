@@ -1,4 +1,4 @@
-@value makerBlack, makerGrey, makerWheat from './common/color.css';
+@value makerBlack, makerGrey, makerLightGrey, makerWheat from './common/color.css';
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 body {
@@ -8,7 +8,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(245, 237, 219);
+  background-color: rgb(240, 236, 230);
+  /* background-color: makerGrey; */
   color: makerBlack;
 }
 

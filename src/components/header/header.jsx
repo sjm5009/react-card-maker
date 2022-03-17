@@ -1,11 +1,9 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 import styles from "./header.module.css";
 
 const Header = ({ onLogout }) => {
-  const location = useLocation();
-  const logoStlye =
-    location.pathname === "/" ? styles.logo_login : styles.logo_maker;
+  /* const logoStlye =
+    location.pathname === "/" ? styles.logo_login : styles.logo_maker; */
 
   return (
     <header className={styles.container}>

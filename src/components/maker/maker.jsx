@@ -6,9 +6,11 @@ import Footer from "../footer/footer";
 import Header from "../header/header";
 import styles from "./maker.module.css";
 
-const Maker = ({ FileInput, authProvider }) => {
+const Maker = ({ FileInput, authProvider, cardRepository }) => {
+  const locationState = useLocation().state;
+  const [userId, setUserId] = useState(locationState.id);
   const [cards, setCards] = useState({
-    1: {
+    /* 1: {
       id: 1,
       name: "Choman_1",
       company: "Samsung",
@@ -40,7 +42,7 @@ const Maker = ({ FileInput, authProvider }) => {
       description: "Choman Description 3",
       fileName: "people_logo.png",
       fileURL: null,
-    },
+    }, */
   });
 
   const navigation = useNavigate();
@@ -55,6 +57,8 @@ const Maker = ({ FileInput, authProvider }) => {
       updated[card.id] = card;
       return updated;
     });
+
+    cardRepository.saveCard(userId, card);
   };
 
   const deleteCard = (card) => {
@@ -63,15 +67,29 @@ const Maker = ({ FileInput, authProvider }) => {
       delete updated[card.id];
       return updated;
     });
+
+    cardRepository.deleteCard(userId, card.id);
   };
 
   useEffect(() => {
     authProvider.onAuthChanged((user) => {
-      if (!user) {
+      if (user) {
+        setUserId(user.uid);
+      } else {
         navigation("/");
       }
     });
-  });
+  }, [authProvider, userId, navigation]);
+
+  useEffect(() => {
+    if (!userId) {
+      return;
+    }
+
+    cardRepository.syncCard(userId, (cards) => {
+      setCards(cards);
+    });
+  }, [userId, cardRepository]);
 
   return (
     <section className={styles.maker}>

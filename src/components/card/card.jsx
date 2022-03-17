@@ -3,17 +3,7 @@ import styles from "./card.module.css";
 
 const DEFAULT_IMAGE = "./people_logo.png";
 const Card = ({ card }) => {
-  const {
-    id,
-    name,
-    company,
-    theme,
-    title,
-    email,
-    description,
-    fileName,
-    fileURL,
-  } = card;
+  const { name, company, theme, title, email, description, fileURL } = card;
   const url = fileURL || DEFAULT_IMAGE;
 
   const getThemeColor = (theme) => {
@@ -31,7 +21,7 @@ const Card = ({ card }) => {
   return (
     <>
       <li className={`${styles.card} ${getThemeColor(theme)}`}>
-        <img className={styles.img} src={url} alt="preview photo" />
+        <img className={styles.img} src={url} alt="preview" />
         <div className={styles.cardInfo}>
           <h1 className={styles.name}>{name}</h1>
           <p className={`${styles.company} ${getThemeColor(theme)}`}>

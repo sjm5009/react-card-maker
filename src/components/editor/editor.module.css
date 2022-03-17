@@ -1,8 +1,13 @@
 .editor {
   flex-basis: 50%;
+  overflow-y: auto;
   /* background-color: aquamarine; */
 }
 
 .title {
   text-align: center;
+}
+
+.editForm {
+  padding: 0 2em;
 }
